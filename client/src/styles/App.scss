@@ -1,0 +1,228 @@
+@use "colors" as c;
+@use "fonts" as f;
+@use "sizes" as s;
+
+// Home Page
+.home {
+	display: flex;
+	flex-direction: column;
+	gap: s.$gap;
+	padding: s.$padding-0;
+	min-height: 100dvh;
+	max-width: 100dvw;
+
+	.card {
+		padding: s.$padding;
+		.content {
+			&.three {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: s.$gap;
+
+				.section {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: s.$gap;
+					border: 1px solid c.$border-color;
+					border-radius: s.$border-radius;
+					height: 100%;
+					width: 100%;
+					padding: s.$padding;
+
+					.title {
+						font-size: s.$title-lg;
+						font-weight: normal;
+						text-transform: capitalize;
+					}
+				}
+			}
+
+			&.two {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: s.$gap;
+				.section {
+					&:first-child {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						gap: s.$gap;
+
+						img {
+							height: 400px;
+							width: 400px;
+							object-fit: contain;
+						}
+					}
+					&.form {
+						display: flex;
+						flex-direction: column;
+						gap: s.$gap;
+					}
+				}
+
+				.me {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: s.$gap;
+					width: 100%;
+
+					.image {
+						border: 1px solid c.$border-color;
+						border-radius: s.$circle;
+						height: 300px;
+						width: 300px;
+						overflow: hidden;
+
+						img {
+							height: 100%;
+							width: 100%;
+							object-fit: cover;
+						}
+					}
+
+					ul {
+						display: flex;
+						flex-direction: row;
+						gap: s.$gap;
+						width: fit-content;
+
+						li {
+							display: flex;
+							align-items: center;
+							gap: 0;
+							border: 1px solid c.$border-color;
+							border-radius: s.$circle;
+							padding: s.$padding;
+						}
+					}
+				}
+				.info {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					text-align: justify;
+					gap: s.$gap;
+				}
+			}
+		}
+	}
+}
+
+// Components - Card
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: s.$gap;
+	height: fit-content;
+	width: 100%;
+
+	.title {
+		font-size: s.$title-xl;
+		font-weight: 600;
+		text-transform: capitalize;
+	}
+
+	.content {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+// Components - Field
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 100%;
+
+	label {
+		text-transform: capitalize;
+	}
+
+	input {
+		padding: s.$padding;
+	}
+}
+
+// Responsive Design
+@media screen and (max-width: 1024px) {
+	.home {
+		.card {
+			.content {
+				&.three {
+					grid-template-columns: repeat(2, 1fr);
+
+					.section {
+						&:last-child {
+							grid-column: 1/3;
+						}
+					}
+				}
+
+				&.two {
+					grid-template-columns: 1fr;
+
+					.section {
+						&:first-child {
+							img {
+								height: 300px;
+								width: 300px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.home {
+		padding: 0;
+		.card {
+			.content {
+				&.three {
+					grid-template-columns: 1fr;
+
+					.section {
+						border: none;
+
+						&:last-child {
+							grid-column: 1/2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.home {
+		.card {
+			.content {
+				&.two {
+					.section {
+						&:first-child {
+							img {
+								height: 250px;
+								width: 250px;
+							}
+						}
+					}
+
+					.me {
+						.image {
+							height: 250px;
+							width: 250px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

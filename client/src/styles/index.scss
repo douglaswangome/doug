@@ -1,0 +1,108 @@
+@use "colors" as c;
+@use "fonts" as f;
+@use "sizes" as s;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: f.$body-font;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: c.$background-color;
+	color: #fff;
+	scroll-behavior: smooth;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	height: fit-content;
+	font-size: inherit;
+	line-height: 0%;
+
+	svg {
+		height: 24px;
+		width: 24px;
+	}
+}
+
+button {
+	background-color: transparent;
+	border: 1px solid c.$border-color;
+	border-radius: s.$border-radius;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	padding: s.$padding;
+	transition: background-color 0.3s ease-in-out;
+
+	&:hover {
+		background-color: c.$border-color;
+	}
+}
+
+input,
+textarea {
+	background-color: transparent;
+	border: 1px solid c.$border-color;
+	border-radius: s.$border-radius;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	padding: s.$padding;
+
+	&:focus {
+		outline: none;
+	}
+}
+textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+
+ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: s.$gap;
+	overflow: hidden;
+	width: 100%;
+	cursor: default;
+
+	li {
+		display: flex;
+		align-items: center;
+		gap: s.$gap;
+		border-block: 1px solid c.$border-color;
+		width: 100%;
+		padding: s.$padding-0;
+		transition: background-color 0.3s ease-in-out;
+
+		&:hover {
+			background-color: c.$container-color;
+		}
+
+		img {
+			height: 50px;
+			width: 50px;
+			object-fit: cover;
+		}
+	}
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-track {
+	background: c.$background-color;
+}
+::-webkit-scrollbar-thumb {
+	background: c.$border-color;
+	border-radius: 10px;
+}
