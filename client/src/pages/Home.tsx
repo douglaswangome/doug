@@ -1,8 +1,7 @@
-import { ChangeEvent, FC, useState } from "react";
+import { FC } from "react";
 // Components
 import Card from "components/Card";
 import List from "components/List";
-import Field from "components/Field";
 import Project from "components/Project";
 // Icons
 import { BsEnvelope, BsLinkedin, BsPhone, BsTwitterX } from "react-icons/bs";

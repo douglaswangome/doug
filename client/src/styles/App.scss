@@ -140,22 +140,6 @@
 	}
 }
 
-// Components - Field
-.field {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-	width: 100%;
-
-	label {
-		text-transform: capitalize;
-	}
-
-	input {
-		padding: s.$padding;
-	}
-}
-
 // Components - Project
 .project {
 	display: flex;
