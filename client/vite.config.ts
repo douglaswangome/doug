@@ -11,6 +11,7 @@ export default defineConfig({
 			pages: "/src/pages",
 			routes: "/src/routes",
 			styles: "/src/styles",
+			types: "/src/types",
 		},
 	},
 });

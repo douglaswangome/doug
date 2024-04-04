@@ -148,6 +148,55 @@
 	}
 }
 
+// Components - Project
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: s.$gap;
+	border: 1px solid c.$border-color;
+	border-radius: s.$border-radius;
+	padding: s.$padding;
+	width: 100%;
+	cursor: default;
+
+	.image {
+		border-radius: s.$border-radius;
+
+		height: 200px;
+		width: 100%;
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			opacity: 0.8;
+		}
+	}
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		gap: s.$gap;
+		width: 100%;
+
+		.title {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.links {
+			display: flex;
+			align-items: center;
+			gap: s.$gap;
+			width: fit-content;
+			margin-inline: auto;
+		}
+	}
+}
+
 // Responsive Design
 @media screen and (max-width: 1024px) {
 	.home {

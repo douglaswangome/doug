@@ -3,8 +3,12 @@ import { ChangeEvent, FC, useState } from "react";
 import Card from "components/Card";
 import List from "components/List";
 import Field from "components/Field";
+import Project from "components/Project";
 // Icons
-import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { FaGithubAlt } from "react-icons/fa6";
+// Types
+import { Project as ProjectType } from "types/project";
 
 const Home: FC = () => {
 	// Contact Form Details
@@ -25,6 +29,94 @@ const Home: FC = () => {
 		setFields((prev) => ({ ...prev, [name]: value }));
 	};
 
+	// Project Details
+	const projects: ProjectType[] = [
+		{
+			title: "nawirisha",
+			img: "/assets/images/nawirisha.png",
+			description:
+				"Developed a website for Nawirisha, a non-profit organization that aims to empower teenage mothers.",
+			link: {
+				github: "https://github.com/douglaswangome/nawirisha",
+				site: "https://nawirishadadainitiative.org",
+			},
+			tags: ["react", "typescript", "css3"],
+		},
+		{
+			title: "weather app",
+			img: "/assets/images/weather.png",
+			description:
+				"Engineered a weather app using React and TypeScript to display weather information. Consumed the OpenWeatherMap API to fetch weather data.",
+			link: {
+				github: "https://github.com/douglaswangome/weather-app-2.0",
+				site: "https://courageous-llama-c2b720.netlify.app/",
+			},
+			tags: ["react", "javascript", "tailwindcss"],
+		},
+		{
+			title: "quiz app",
+			img: "/assets/images/quiz.png",
+			description:
+				"Designed a quiz app using React and TypeScript to test user general knowledge. Consumed the Open Trivia DB API to fetch quiz questions.",
+			link: {
+				github: "https://github.com/douglaswangome/quiz-app",
+				site: "https://zingy-tartufo-01fc5e.netlify.app/",
+			},
+			tags: ["react", "typescript", "tailwindcss"],
+		},
+		{
+			title: "posts",
+			img: "/assets/images/posts.png",
+			description:
+				"Developed a blog website using React, Redux, and TypeScript. Consumed the Dummy JSON API to fetch posts.",
+			link: {
+				github: "https://github.com/douglaswangome/posts",
+				site: "https://posts-psi.vercel.app/",
+			},
+			tags: ["react", "redux", "typescript", "css3"],
+		},
+		{
+			title: "todo list",
+			img: "/assets/images/todo.png",
+			description: "Crafted an interactive todo list using React and Redux.",
+			link: {
+				github: "https://github.com/douglaswangome/todo_list_with_redux",
+				site: "https://todo-redux-list.netlify.app/",
+			},
+			tags: ["react", "redux", "javascript", "css3"],
+		},
+		{
+			title: "pizza inn",
+			img: "/assets/images/pizza.png",
+			description:
+				"Brought prouctivity to pizza inn kenya using the MERN tech stack.",
+			link: {
+				github: "https://github.com/douglaswangome/pizza",
+				site: "https://pizza-inn-kenya.netlify.app/",
+			},
+			tags: [
+				"react",
+				"redux",
+				"javascript",
+				"nodedotjs",
+				"express",
+				"mongodb",
+				"firebase",
+			],
+		},
+		{
+			title: "react cookies",
+			img: "/assets/images/cookies.png",
+			description:
+				"Developed a cookie store using React for storing and managing cookies.",
+			link: {
+				github: "https://github.com/douglaswangome/react_with_cookies",
+				site: "https://react-with-cookies.netlify.app/",
+			},
+			tags: ["react", "javascript", "css3"],
+		},
+	];
+
 	return (
 		<div className="home">
 			<Card id="about" className="two" legend="Delve Deeper">
@@ -36,7 +128,7 @@ const Home: FC = () => {
 						<List
 							items={[
 								{
-									icon: <BsGithub />,
+									icon: <FaGithubAlt />,
 									link: "https://www.github.com/douglaswangome",
 								},
 								{
@@ -75,9 +167,11 @@ const Home: FC = () => {
 					</span>
 				</div>
 			</Card>
-			{/* <Card id="projects" className="three" legend="creative collection">
-
-			</Card> */}
+			<Card id="projects" className="three" legend="creative collection">
+				{projects.map((project, index) => (
+					<Project key={index} {...project} />
+				))}
+			</Card>
 			<Card id="skills" className="three" legend="competency collection">
 				<div className="section">
 					<div className="title">Languages</div>

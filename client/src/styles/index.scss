@@ -75,6 +75,26 @@ ul {
 	width: 100%;
 	cursor: default;
 
+	&.row {
+		flex-direction: row;
+		gap: 4px;
+
+		li {
+			border: 1px solid c.$border-color;
+			border-radius: s.$circle;
+			height: 42px;
+			width: 42px;
+			padding: s.$padding-0;
+			overflow: hidden;
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
 	li {
 		display: flex;
 		align-items: center;
