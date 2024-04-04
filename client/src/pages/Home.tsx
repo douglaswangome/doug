@@ -217,7 +217,7 @@ const Home: FC = () => {
 						</a>
 					</div>
 					<div className="icon">
-						<a href="mailto:ishdagnesh@gmail.com">
+						<a href="mailto:developer@douglaswangome.com">
 							<BsEnvelope />
 						</a>
 					</div>
