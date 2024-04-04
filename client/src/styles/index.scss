@@ -10,13 +10,16 @@
 	padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: f.$body-font;
 	font-size: 16px;
 	line-height: 1.5;
 	background-color: c.$background-color;
 	color: #fff;
-	scroll-behavior: smooth;
 }
 
 a {
@@ -82,8 +85,8 @@ ul {
 		li {
 			border: 1px solid c.$border-color;
 			border-radius: s.$circle;
-			height: 42px;
-			width: 42px;
+			height: 36px;
+			width: 36px;
 			padding: s.$padding-0;
 			overflow: hidden;
 

@@ -5,30 +5,12 @@ import List from "components/List";
 import Field from "components/Field";
 import Project from "components/Project";
 // Icons
-import { BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { BsEnvelope, BsLinkedin, BsPhone, BsTwitterX } from "react-icons/bs";
 import { FaGithubAlt } from "react-icons/fa6";
 // Types
 import { Project as ProjectType } from "types/project";
 
 const Home: FC = () => {
-	// Contact Form Details
-	const [fields, setFields] = useState<{
-		name: string;
-		email: string;
-		message: string;
-	}>({
-		name: "",
-		email: "",
-		message: "",
-	});
-
-	const handleChange = (
-		e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
-	): void => {
-		const { name, value } = e.target;
-		setFields((prev) => ({ ...prev, [name]: value }));
-	};
-
 	// Project Details
 	const projects: ProjectType[] = [
 		{
@@ -63,6 +45,17 @@ const Home: FC = () => {
 				site: "https://zingy-tartufo-01fc5e.netlify.app/",
 			},
 			tags: ["react", "typescript", "tailwindcss"],
+		},
+		{
+			title: "Doug Blog",
+			img: "/assets/images/blog.png",
+			description:
+				"Developed a blog website using React, Context API, and JavaScript. Used Firebase auth, storage and hosting.",
+			link: {
+				github: "https://github.com/douglaswangome/blog-app",
+				site: "https://doug-react-blog.web.app/",
+			},
+			tags: ["react", "javascript", "css3", "firebase"],
 		},
 		{
 			title: "posts",
@@ -167,11 +160,6 @@ const Home: FC = () => {
 					</span>
 				</div>
 			</Card>
-			<Card id="projects" className="three" legend="creative collection">
-				{projects.map((project, index) => (
-					<Project key={index} {...project} />
-				))}
-			</Card>
 			<Card id="skills" className="three" legend="competency collection">
 				<div className="section">
 					<div className="title">Languages</div>
@@ -211,25 +199,29 @@ const Home: FC = () => {
 					/>
 				</div>
 			</Card>
+			<Card id="projects" className="three" legend="creative collection">
+				{projects.map((project, index) => (
+					<Project key={index} {...project} />
+				))}
+			</Card>
 			<Card id="contact" className="two" legend="need help?">
 				<div className="section">
 					<span>
 						Ready to Turn Ideas into Action? Let's Partner Up and Get Things
 						Rolling! Contact Me Today!
 					</span>
-					<img src="/assets/icons/mailbox.svg" alt="mailbox" />
 				</div>
-				<div className="section form">
-					<Field name="name" value={fields.name} onChange={handleChange} />
-					<Field name="email" value={fields.email} onChange={handleChange} />
-					<Field
-						name="message"
-						value={fields.message}
-						onChange={handleChange}
-					/>
-					<button onClick={() => console.log(fields)}>
-						<span>Send Message</span>
-					</button>
+				<div className="section">
+					<div className="icon">
+						<a href="tel:+254798782288">
+							<BsPhone />
+						</a>
+					</div>
+					<div className="icon">
+						<a href="mailto:ishdagnesh@gmail.com">
+							<BsEnvelope />
+						</a>
+					</div>
 				</div>
 			</Card>
 		</div>
