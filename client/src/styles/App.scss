@@ -269,6 +269,13 @@
 						}
 					}
 				}
+
+				&.two {
+					grid-template-columns: 1fr;
+					.section {
+						justify-content: center;
+					}
+				}
 			}
 		}
 	}
@@ -320,15 +327,6 @@
 }
 
 @media screen and (max-width: 480px) {
-	.home {
-		.card {
-			.content {
-				&.two {
-					grid-template-columns: 1fr;
-				}
-			}
-		}
-	}
 	.project {
 		.details {
 			.title {
