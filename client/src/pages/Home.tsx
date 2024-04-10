@@ -32,7 +32,7 @@ const Home: FC = () => {
 				github: "https://github.com/douglaswangome/weather-app-2.0",
 				site: "https://courageous-llama-c2b720.netlify.app/",
 			},
-			tags: ["react", "javascript", "tailwindcss"],
+			tags: ["react", "typescript", "tailwindcss"],
 		},
 		{
 			title: "quiz app",
